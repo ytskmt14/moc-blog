@@ -14,4 +14,12 @@ ActiveAdmin.register Post do
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
+
+  form do |f|
+    f.inputs 'Post' do
+      f.input :title
+      f.input :body, as: :quill_editor
+    end
+    f.actions
+  end
 end
